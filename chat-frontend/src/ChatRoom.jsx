@@ -11,7 +11,7 @@ const ChatRoom = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const res = await fetch("http://localhost:5000/messages");
+        const res = await fetch("https://chat-model-wv7m.onrender.com");
         const data = await res.json();
         setMessages(data);
       } catch (err) {
