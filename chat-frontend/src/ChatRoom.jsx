@@ -20,7 +20,7 @@ const ChatRoom = () => {
     };
     fetchMessages();
 
-    socketRef.current = io("http://localhost:5000", {
+    socketRef.current = io("https://chat-model-wv7m.onrender.com", {
       transports: ["websocket", "polling"]
     });
 
