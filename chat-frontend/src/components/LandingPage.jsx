@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageSquare, Zap, Shield, Users, ArrowRight, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import bg_image from '../assets/bg_image.jpeg';
+import bg_image from '../assets/bg_image.png';
 
 const LandingPage = () => {
   const navigate = useNavigate();
