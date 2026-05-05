@@ -2,44 +2,23 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageSquare, Zap, Shield, Users, ArrowRight, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import bg_image from '../assets/bg_image.jpeg';
 
 const LandingPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-beige-100 text-brown-900 selection:bg-terracotta/20 overflow-hidden relative">
+    <div className="min-h-screen text-brown-900 selection:bg-terracotta/20 overflow-hidden relative">
       {/* Background Image Container */}
       <div 
-        className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 landing-bg opacity-40 mix-blend-multiply"
-        style={{ 
-          backgroundImage: 'url("https://images.unsplash.com/photo-1516594798947-e65505dbb29d?auto=format&fit=crop&q=80")', // Placeholder, user will replace
-          filter: 'sepia(0.2)'
-        }}
-      />
-      
-      {/* Texture Overlay */}
-      <div className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 bg-[url('https://www.transparenttextures.com/patterns/paper.png')] opacity-30" />
-
-      {/* Navigation */}
-      <nav className="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between relative z-10">
-        <div className="flex items-center gap-3">
-          <div className="bg-terracotta p-2.5 rounded-2xl shadow-lg shadow-terracotta/20">
-            <MessageSquare className="w-6 h-6 text-white" />
-          </div>
-          <span className="text-2xl font-black tracking-tight text-brown-900">Nexus</span>
-        </div>
-        <div className="hidden md:flex items-center gap-10 text-brown-700 font-bold text-sm uppercase tracking-widest">
-          <button className="hover:text-terracotta transition-colors">Features</button>
-          <button className="hover:text-terracotta transition-colors">Safety</button>
-          <button className="hover:text-terracotta transition-colors">Community</button>
-        </div>
-        <button 
-          onClick={() => navigate('/chat')}
-          className="bg-brown-900 hover:bg-brown-800 text-beige-50 px-7 py-2.5 rounded-full transition-all text-sm font-bold shadow-lg shadow-brown-900/20 active:scale-95"
-        >
-          Login
-        </button>
-      </nav>
+      className="fixed top-0 left-0 w-full h-full pointer-events-none opacity-80"
+      style={{ 
+        backgroundImage: `url(${bg_image})`,
+        backgroundRepeat: 'no-repeat', 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center'
+      }}
+    />
 
       {/* Hero Section */}
       <main className="max-w-7xl mx-auto px-6 pt-24 pb-32 relative z-10">
@@ -47,7 +26,7 @@ const LandingPage = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 bg-terracotta/10 border border-terracotta/20 px-5 py-2 rounded-full text-terracotta text-xs font-black uppercase tracking-widest mb-10"
+            className="inline-flex items-center gap-2 bg-terracotta/10 border border-terracotta/20 px-5 py-2 rounded-full text-terracotta-dark text-xs font-black uppercase tracking-widest mb-10"
           >
             <Sparkles className="w-4 h-4" />
             <span>Next-Gen Communication</span>
@@ -59,7 +38,7 @@ const LandingPage = () => {
             transition={{ delay: 0.1 }}
             className="text-6xl md:text-8xl font-black tracking-tight mb-8 text-brown-900 leading-[0.9]"
           >
-            Chatting, <br />
+            GuppShapp <br />
             <span className="text-terracotta italic font-serif">Redefined.</span>
           </motion.h1>
 
@@ -112,21 +91,6 @@ const LandingPage = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-brown-900/5 bg-white/30 backdrop-blur-xl relative z-10">
-        <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row justify-between items-center gap-10 text-brown-700 font-bold text-sm">
-          <div className="flex items-center gap-3">
-            <MessageSquare className="w-6 h-6 text-terracotta" />
-            <span className="text-xl font-black text-brown-900">Nexus</span>
-          </div>
-          <div className="flex gap-12 uppercase tracking-widest text-xs">
-            <button className="hover:text-terracotta transition-colors">Privacy</button>
-            <button className="hover:text-terracotta transition-colors">Terms</button>
-            <button className="hover:text-terracotta transition-colors">Contact</button>
-          </div>
-          <p className="opacity-50 tracking-wide font-medium">© 2024 NEXUS CHAT. ALL RIGHTS RESERVED.</p>
-        </div>
-      </footer>
     </div>
   );
 };
